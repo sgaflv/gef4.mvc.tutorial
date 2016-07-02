@@ -109,6 +109,7 @@ public class CreationMenuOnClickPolicy extends AbstractInteractionPolicy<Node> i
 		IContentPart<Node, ? extends Node> contentPartModel = getHost().getRoot().getContentPartChildren().get(0);
 
 		// build create operation
+		@SuppressWarnings("serial")
 		CreationPolicy<Node> creationPolicy = root.getAdapter(new TypeToken<CreationPolicy<Node>>(){});
 		creationPolicy.init();
 		creationPolicy.create(textNode, contentPartModel, HashMultimap.create());

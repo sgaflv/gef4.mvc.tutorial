@@ -30,6 +30,7 @@ public class DeleteOnClickPolicy extends AbstractInteractionPolicy<Node> impleme
 		System.out.println("DeleteOnClickPolicy.click()");
 		IVisualPart<Node, ? extends Node> targetPart = getTargetPart();
 		if (targetPart instanceof IContentPart) {
+			@SuppressWarnings("serial")
 			DeletionPolicy<Node> policy = getHost().getRoot().getAdapter(new TypeToken<DeletionPolicy<Node>>(){});
 			if (policy != null) {
 				init(policy);
